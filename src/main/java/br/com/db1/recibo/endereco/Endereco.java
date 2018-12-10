@@ -8,11 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import br.com.db1.recibo.cidade.Cidade;
+import br.com.db1.recibo.pessoa.Pessoa;
 
 @Entity
 @Table(name = "endereco")
@@ -22,9 +22,9 @@ public class Endereco {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name = "pessoa_id", referencedColumnName = "id", nullable = false)
-	private String pessoa;
+	private Pessoa pessoa;
 
 	@ManyToOne
 	@JoinColumn(name = "cidade_id", referencedColumnName="id", nullable = false)
@@ -43,6 +43,6 @@ public class Endereco {
 	private String cep;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "tipo de logradouro", length = 3, nullable = false)
+	@Column(name = "tipo_logradouro", length = 3, nullable = false)
 	private TipoDeLogradouro tipoDeLogradouro;
 }

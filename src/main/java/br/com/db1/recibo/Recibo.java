@@ -21,9 +21,6 @@ public class Recibo {
 	@Column(name = "valor", precision = 14, scale = 2)
 	private Double valor;
 
-	@Column(name = "emitente", length = 50, nullable = false)
-	private Pessoa emitente;
-	
 	@Column(name = "data emissao")
 	private LocalDate dataEmissao;
 }

@@ -22,8 +22,17 @@ public class Cidade {
 	@Column(name="nome", length = 60, nullable = false)
 	private String nome;
 
-	@OneToMany	
 	@Enumerated(EnumType.STRING)
-	@JoinColumn(name = "uf_id", referencedColumnName = "id", nullable = false)
+	@Column(name = "uf_id",  nullable = false)
 	private Uf uf;
+	
+	protected Cidade() {
+	}
+
+	public Cidade(String nome, Uf uf) {
+		this.nome = nome;
+		this.uf = uf;
+		
+	}
+
 }
