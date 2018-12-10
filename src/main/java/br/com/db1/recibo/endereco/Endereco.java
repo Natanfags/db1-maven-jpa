@@ -27,8 +27,12 @@ public class Endereco {
 	private Cidade cidade;
 	
 	@ManyToMany
-	@JoinColumn
+	@JoinColumn(name = "pessoa_id", referencedColumnName = "id", nullable = false)
+	private String pessoa;
+
+	@Column(name = "logradouro", length = 100, nullable = false)
 	private String logradouro;
+
 	
 	@Column(name = "numero", length = 10, nullable = false)
 	private String numero;

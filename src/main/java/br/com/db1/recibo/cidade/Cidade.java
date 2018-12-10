@@ -7,6 +7,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -21,9 +22,9 @@ public class Cidade {
 	@Column(name="nome", length = 60, nullable = false)
 	private String nome;
 
-	@OneToMany
+	@OneToMany	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "uf_id", length = 2, nullable = false)
+	@JoinColumn(name = "uf_id", referencedColumnName = "id", nullable = false)
 	private Uf uf;
 
 }
