@@ -7,8 +7,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -33,6 +31,10 @@ public class Cidade {
 		this.nome = nome;
 		this.uf = uf;
 		
+	}
+
+	public void alteraNome(String nome) {
+		this.nome = nome;
 	}
 
 }
