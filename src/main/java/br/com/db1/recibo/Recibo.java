@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import br.com.db1.recibo.pessoa.Pessoa;
 
 @Entity
@@ -18,11 +17,13 @@ public class Recibo {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(name = "valor", precision = 14, scale = 2)
+	private Double valor;
 
 	@Column(name = "emitente", length = 50, nullable = false)
 	private Pessoa emitente;
 	
-	
-	@Column(name = "data Emissao")
+	@Column(name = "data emissao")
 	private LocalDate dataEmissao;
 }

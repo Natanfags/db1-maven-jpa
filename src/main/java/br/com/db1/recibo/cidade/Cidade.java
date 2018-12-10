@@ -26,5 +26,4 @@ public class Cidade {
 	@Enumerated(EnumType.STRING)
 	@JoinColumn(name = "uf_id", referencedColumnName = "id", nullable = false)
 	private Uf uf;
-
 }

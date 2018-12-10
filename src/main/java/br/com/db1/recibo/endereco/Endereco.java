@@ -22,18 +22,17 @@ public class Endereco {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@ManyToOne
-	@JoinColumn(name = "cidade_id", referencedColumnName="id", nullable = false)
-	private Cidade cidade;
-	
 	@ManyToMany
 	@JoinColumn(name = "pessoa_id", referencedColumnName = "id", nullable = false)
 	private String pessoa;
 
+	@ManyToOne
+	@JoinColumn(name = "cidade_id", referencedColumnName="id", nullable = false)
+	private Cidade cidade;
+	
 	@Column(name = "logradouro", length = 100, nullable = false)
 	private String logradouro;
 
-	
 	@Column(name = "numero", length = 10, nullable = false)
 	private String numero;
 	
@@ -44,8 +43,6 @@ public class Endereco {
 	private String cep;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "Tipo De Logradouro", length = 3, nullable = false)
+	@Column(name = "tipo de logradouro", length = 3, nullable = false)
 	private TipoDeLogradouro tipoDeLogradouro;
-	
-	
 }

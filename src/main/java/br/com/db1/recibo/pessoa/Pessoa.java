@@ -23,5 +23,4 @@ public class Pessoa {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "documento", length = 14, nullable = false)
 	private String documento;
-	
 }
